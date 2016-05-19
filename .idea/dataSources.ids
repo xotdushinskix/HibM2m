@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - m2m_test@localhost" uuid="841991f1-872b-433c-8d39-331d30213fce">
+    <database-info product="MySQL" version="5.5.49" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="m2m_test"/>
+    <table name="role" schema="" catalog="m2m_test" type="TABLE">
+      <column name="role_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="role_title" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="role_id"/>
+      <exported-key name="FKeqf97fjmtwxqyuqn2iw3i8ctv" table="user" schema="" catalog="m2m_test" columns="role_title"/>
+    </table>
+    <table name="user" schema="" catalog="m2m_test" type="TABLE">
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="role_title" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <foreign-key name="FKeqf97fjmtwxqyuqn2iw3i8ctv" columns="role_title" ref-table="role" ref-schema="" ref-catalog="m2m_test" ref-columns="role_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FKeqf97fjmtwxqyuqn2iw3i8ctv" unique="false" columns="role_title"/>
+    </table>
+  </data-source>
+</component>
